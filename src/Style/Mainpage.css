@@ -6,8 +6,19 @@ body {
   background-color: #fff;
   color: #000;
   font-size: 16px;
-  line-height: 1.6;
+
   overflow-x: hidden;
+}
+.Footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  font-family: Verdana Tahoma, serif;
 }
 header {
   margin: 5px;
@@ -152,7 +163,7 @@ a {
     height: 55px;
     width: 100%;
     text-align: center;
-    background-color: #f5f1f124;
+    background-color: rgba(238, 92, 92, 0.303);
   }
   .menu1 a:first-child {
     margin-top: 0px;
@@ -166,7 +177,9 @@ a {
     height: 100%;
     width: 100vh;
     max-width: 100%;
-    background-image: url(/src/Images/best.PNG);
+
+    background-image: url(/src/Images/brabild.png);
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -190,10 +203,9 @@ a {
   }
   .MainButtons {
     position: relative;
-
-    left: 43%;
-    top: 580px;
-    display: inline;
+    left: 25%;
+    top: 300px;
+    width: 100%;
   }
 }
 .MainButtons {

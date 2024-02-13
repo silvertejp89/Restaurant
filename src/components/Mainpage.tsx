@@ -4,6 +4,9 @@ import Button from "@mui/material/Button";
 import { FaHome } from "react-icons/fa";
 import { MdOutlineRoundaboutRight } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
+import { Link } from "react-router-dom";
+
+
 
 
 
@@ -11,6 +14,7 @@ export function Mainpage() {
   
   return (
     <main>
+      
       <div className="MainButtons">
         <Box sx={{ "& button": { m: 1 } }}>
           <Button variant="outlined" size="medium" >
@@ -33,15 +37,16 @@ export function Mainpage() {
             </label>
 
             <nav className="menu1">
-              
-              <a className="link1"><FaHome /> Home</a>
-              <a className="link2"><MdOutlineRoundaboutRight />About</a>
-              <a className="link3"><TbBrandBooking />Booking</a>
-              
-            </nav>
+    <Link to="/" className="link1"><FaHome /> Home</Link>
+    <Link to="/about" className="link2"><MdOutlineRoundaboutRight />About</Link>
+    <Link to="/booking" className="link3"><TbBrandBooking />Booking</Link>
+    
+</nav>
           </nav>
         </section>
       </header>
+      
    </main>
+   
   );
 }
