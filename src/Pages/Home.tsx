@@ -10,7 +10,8 @@ import '../Style/Mainpage.css';
 
 export function Home() {
   return (
-    <main>
+    
+    <main id="HomePage">
       <div className="MainButtons">
         <Box sx={{ "& button": { m: 1 } }}>
           <Button variant="outlined" size="medium">

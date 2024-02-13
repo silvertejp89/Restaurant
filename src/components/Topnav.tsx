@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export function Topnav() {
     return (
-        <div id="Homepage" className="topnav">
+        <div  className="topnav">
         <section className="p-menu1">
           <nav id="navbar" className="navigation" role="navigation">
             <input id="toggle1" type="checkbox" />

@@ -21,9 +21,9 @@ body {
   font-family: Verdana Tahoma, serif;
 }
 
-#Homepage {
+#HomePage {
   padding: 5px;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   max-width: 100%;
   background-image: url(../Images/jason-leung-poI7DelFiVA-unsplash.jpg);
