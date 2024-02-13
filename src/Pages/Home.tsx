@@ -5,12 +5,10 @@ import { FaHome } from "react-icons/fa";
 import { MdOutlineRoundaboutRight } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import '../Style/Mainpage.css';
-
+import "../Style/Mainpage.css";
 
 export function Home() {
   return (
-    
     <main id="HomePage">
       <div className="MainButtons">
         <Box sx={{ "& button": { m: 1 } }}>
@@ -22,8 +20,6 @@ export function Home() {
           </Button>
         </Box>
       </div>
-    
-      
     </main>
   );
 }

@@ -1,9 +1,7 @@
-
-
 export function Booking() {
-    return (
-        <div>
-        <h1>Booking</h1>
-        </div>
-    );
-    }
+  return (
+    <div>
+      <h1>Booking</h1>
+    </div>
+  );
+}

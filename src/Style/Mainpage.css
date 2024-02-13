@@ -26,7 +26,7 @@ body {
   height: 100vh;
   width: 100%;
   max-width: 100%;
-  background-image: url(../Images/jason-leung-poI7DelFiVA-unsplash.jpg);
+  background-image: url(../Images/Skärmklipp5.PNG);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -115,7 +115,7 @@ a {
   clear: both;
   width: auto;
   text-align: center;
-  height: 0px;
+  min-height: 10dvh;
   overflow: hidden;
   transition: height 0.4s ease;
   z-index: 120;
@@ -163,7 +163,7 @@ a {
     height: 55px;
     width: 100%;
     text-align: center;
-    background-color: rgba(238, 92, 92, 0.303);
+    background: linear-gradient(to right, #174978a6, #00000094);
   }
   .menu1 a:first-child {
     margin-top: 0px;
