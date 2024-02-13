@@ -1,0 +1,70 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  font-family: Verdana Tahoma, serif;
+  background-color: #f8f8f8;
+}
+
+.footerFooter {
+  background: linear-gradient(to right, #030303a6, #00000094);
+  color: #fff;
+  height: 150px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.footerFooter div {
+  flex: 1;
+}
+
+.footerFooter h3 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footerFooter p {
+  margin: 10px 0;
+}
+
+.footerFooter a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 1.3em;
+  transition: color 0.3s ease-in-out;
+}
+
+.footerFooter a:hover {
+  color: #174978a6;
+}
+
+.footerFooter a::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.footerFooter a[href^="https://facebook.com"]::before
+{
+  background: url("facebook-icon.png") center/cover;
+}
+
+.footerFooter a[href^="https://twitter.com"]::before
+{
+  background: url("twitter-icon.png") center/cover;
+}
+
+.footerFooter a[href^="https://instagram.com"]::before
+{
+  background: url("instagram-icon.png") center/cover;
+}
