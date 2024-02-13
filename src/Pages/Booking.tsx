@@ -1,9 +1,10 @@
-
+import Form  from '../Components/Form';
+import '../Style/Bookinpage.css';
 
 export function Booking() {
     return (
         <div>
-        <h1>Booking</h1>
+            <Form />
         </div>
     );
-    }
+}
