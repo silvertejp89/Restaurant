@@ -1,0 +1,16 @@
+@media screen and (min-width: 320px) {
+    .footerFooter {
+        display: flex;
+        justify-content: space-evenly;
+        color: rgb(255, 255, 255);
+        background: linear-gradient(to right, #030303a6, #00000094);
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .footerFooter {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

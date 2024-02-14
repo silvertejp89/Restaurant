@@ -1,0 +1,33 @@
+@media screen and (min-width: 320px) {
+    .home {
+        background-image: url('../../assets/Images/brabild.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100%;
+        z-index: -1;
+    
+        color: rgb(255, 255, 255);
+    }
+    
+    .home_titles h1 {
+        margin: 0;
+    }    
+}  
+
+@media screen and (min-width: 1024px) {
+    .home {
+        background-image: url('../../assets/Images/brabild.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100%;
+        z-index: -1;
+    
+        color: rgb(255, 255, 255);
+    }
+    
+    .home_titles h1 {
+        margin: 0;
+    }    
+}  

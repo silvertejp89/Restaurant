@@ -1,0 +1,41 @@
+@media screen and (min-width: 320px) {
+    main {
+        min-height: 80dvh;
+    }
+
+/*     #HomePage {
+        padding: 5px;
+        width: 100%;
+        max-width: 100%;
+        background-image: url(../Images/jason-leung-poI7DelFiVA-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      } */
+}
+
+
+@media screen and (min-width: 1024px) {
+    main {
+        min-height: 80dvh;
+    }
+/* 
+    #HomePage {
+        padding: 5px;
+        width: 100%;
+        max-width: 100%;
+        background-image: url(../Images/jason-leung-poI7DelFiVA-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+     */
+}
+
+
+
+
+
+
+
+
