@@ -1,16 +1,104 @@
-@media screen and (min-width: 320px) {
-    .footerFooter {
-        display: flex;
-        justify-content: space-evenly;
-        color: rgb(255, 255, 255);
-        background: linear-gradient(to right, #030303a6, #00000094);
-
-    }
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-image: url(../../assets/Images/jason-leung-poI7DelFiVA-unsplash.jpg);
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@media screen and (min-width: 1024px) {
-    .footerFooter {
-        display: flex;
-        justify-content: space-evenly;
-    }
+.footerFooter {
+  background: linear-gradient(to right, #f39292, #c78f8f);
+  color: #23114a;
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  height: 160px;
+  justify-content: space-around;
+  align-items: center;
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+.footerDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.footerFooter h3 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: rgb(40, 15, 79);
+}
+
+.footerFooter p {
+  margin: 10px 0;
+}
+
+.footerFooter a {
+  color: #361755;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 1.3em;
+  transition: color 0.3s ease-in-out;
+}
+
+.footerFooter a:hover {
+  color: #1b0d3f;
+}
+
+@media screen and (max-width: 600px) {
+  .footerFooter {
+    display: flex;
+    background: linear-gradient(to right, #f39292, #c78f8f);
+    color: #23114a;
+    padding: 10px 10px;
+    text-align: center;
+
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  }
+  .footerDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footerFooter h3 {
+    font-size: clamp(14px, 1vw, 45px);
+    margin-bottom: 1px;
+    color: rgb(40, 10, 79);
+  }
+
+  .footerFooter a {
+    color: #361755;
+    text-decoration: none;
+
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 1.3em;
+    transition: color 0.3s ease-in-out;
+    font-size: clamp(14px, 2vw, 45px);
+  }
+
+  .footerFooter a:hover {
+    color: #1b0d3f;
+  }
+  #Follow {
+    position: relative;
+    right: 10px;
+    bottom: 51px;
+  }
 }

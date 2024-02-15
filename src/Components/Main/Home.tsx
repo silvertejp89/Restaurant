@@ -5,8 +5,6 @@ const Home: React.FC = () => {
   return (
     <div className="home">
         <div className="home_titles">
-            <h1>Hej Adam</h1>
-            <p>Låt oss testaaaaaaa</p>
         </div>
     </div>
   );

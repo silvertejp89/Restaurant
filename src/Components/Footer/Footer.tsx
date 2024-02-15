@@ -15,14 +15,14 @@ export function Footer() {
   
     return (
       <div className="footerFooter">
-        <div>
+        <div className="footerDiv">
           <h3>Contact Us</h3>
           <p>{contactInfo.address}</p>
-          <p>Phone: {contactInfo.phone}</p>
-          <p>Email: {contactInfo.email}</p>
+          <p className="pPhone">Phone: {contactInfo.phone}</p>
+          <p className="pMail">Email: {contactInfo.email}</p>
         </div>
-        <div>
-          <h3>Follow Us</h3>
+        <div className="footerDiv">
+          <h3 id="Follow">Follow Us</h3>
           {socialLinks.map((link, index) => (
             <a
               key={index}
@@ -34,7 +34,7 @@ export function Footer() {
             </a>
           ))}
         </div>
-        <div>
+        <div className="footerDiv">
           <p>© LAK</p>
         </div>
       </div>

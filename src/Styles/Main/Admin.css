@@ -1,50 +1,111 @@
 @media screen and (min-width: 320px) {
-    .Admin {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
-        padding: 20px;
-        margin-top: 20px;
-        margin: 20px;
-    }
+  .Admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f673737d;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.659);
+    padding: 200px;
+    margin-top: 20px;
+    margin: 200px;
+  }
 
-    .Admin div {
-        margin-bottom: 20px;
-    }
+  .Admin div {
+    margin-bottom: 20px;
+    border: 2px solid #fefefe;
+    border-radius: 5px;
+  }
 
-    .Admin button {
-        background-color: #008CBA; 
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-    }
+  .Admin button {
+    background-color: #ee7474;
+    border: none;
+    color: rgb(37, 13, 48);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
 
-    .Admin ul {
-        list-style-type: none;
-        padding: 0;
-    }
+  .Admin ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
-    .Admin li {
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
+  .Admin li {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.796);
+    color: white;
+    font-size: clamp(14px, 1vw, 45px);
+  }
 
-    .Admin .customer-id {
-        font-size: 20px;
-        font-weight: bold;
-      }
+  .Admin .customer-id {
+    font-size: clamp(14px, 1vw, 45px);
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.811);
+    color: white;
+    border: 1px solid #fefefe;
+  }
 }
+@media screen and (max-width: 600px) {
+  .Admin {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f673737d;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+    padding: 0px;
+    margin-top: 20px;
+    margin: 0px;
+  }
 
-  
+  .Admin div {
+    margin-bottom: 20px;
+
+    border: 2px solid #fefefe;
+    border-radius: 5px;
+  }
+
+  .Admin button {
+    background-color: #ee7474;
+    border: none;
+    color: rgb(37, 13, 48);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: clamp(14px, 5vw, 45px);
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .Admin ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .Admin li {
+    padding: 10px;
+
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.486);
+    color: white;
+    font-size: clamp(14px, 2vw, 45px);
+  }
+
+  .Admin .customer-id {
+    font-size: clamp(14px, 3vw, 45px);
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.486);
+    color: white;
+    border: 1px solid #fefefe;
+  }
+}
