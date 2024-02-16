@@ -25,6 +25,7 @@ type CustomerBooking = {
 const Admin = () => {
   const [bookings, setBookings] = useState<CustomerBooking[]>([]);
   const [isVisible, setIsVisible] = useState(false);
+  const [editingBooking, setEditingBooking] = useState<Booking | null>(null);
 
   const fetchBookings = async () => {
     if (isVisible) {
@@ -81,6 +82,49 @@ const Admin = () => {
     }
   };
 
+  const startEditing = (booking: Booking) => {
+    setEditingBooking(booking);
+  };
+
+  const handleEditChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (editingBooking) {
+      setEditingBooking({
+        ...editingBooking,
+        [event.target.name]: event.target.value,
+      });
+    }
+  };
+
+  const handleEditSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (editingBooking) {
+      try {
+        const response = await fetch(`https://school-restaurant-api.azurewebsites.net/booking/update/${editingBooking._id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: editingBooking._id,
+            restaurantId: "65ca2900434ff1a78715c30c", 
+            date: editingBooking.date,
+            time: editingBooking.time,
+            numberOfGuests: editingBooking.numberOfGuests,
+            customerId: editingBooking.customerId,
+          }),
+        });
+        if (!response.ok) {
+          throw new Error('Error updating booking');
+        }
+        fetchBookings();
+        setEditingBooking(null);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+  };
+  
+
   return (
     <div className="Admin">
       <button onClick={fetchBookings}>
@@ -101,12 +145,48 @@ const Admin = () => {
                 <li key={booking._id}>
                   Booking ID: {booking._id}, Date: {booking.date}, Time:{" "}
                   {booking.time}, Number of Guests: {booking.numberOfGuests}
-                  <button style={{ fontSize: '10px', padding: '5px' }} onClick={() => confirmDelete(booking._id)}>Delete</button>
+                  <button style={{ fontSize: '12px', padding: '5px' }} onClick={() => startEditing(booking)}>Edit</button>
+                  <button style={{ fontSize: '12px', padding: '5px' }} onClick={() => confirmDelete(booking._id)}>Delete</button>
                 </li>
               ))}
             </div>
           ))}
         </ul>
+      )}
+      {editingBooking && (
+        <form onSubmit={handleEditSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <label>
+            Date:
+            <input
+              type="text"
+              name="date"
+              value={editingBooking.date}
+              onChange={handleEditChange}
+              style={{ margin: '10px' }}
+            />
+          </label>
+          <label>
+            Time:
+            <input
+              type="text"
+              name="time"
+              value={editingBooking.time}
+              onChange={handleEditChange}
+              style={{ margin: '10px' }}
+            />
+          </label>
+          <label>
+            NoG:
+            <input
+              type="text"
+              name="numberOfGuests"
+              value={editingBooking.numberOfGuests}
+              onChange={handleEditChange}
+              style={{ margin: '10px' }}
+            />
+          </label>
+          <button style={{ fontSize: '12px', padding: '5px', margin: '10px' }} type="submit">Save Changes</button>
+        </form>
       )}
     </div>
   );
