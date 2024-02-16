@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "../../Styles/Main/Form.css";
 
-
 const Form = () => {
   const [formState, setFormState] = useState({
     name: "",
@@ -13,7 +12,7 @@ const Form = () => {
     numberOfGuests: "",
   });
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormState({
       ...formState,
       [event.target.name]: event.target.value,
@@ -120,14 +119,17 @@ const Form = () => {
       <br />
       <label htmlFor="time">Time:</label>
       <br />
-      <input
-        type="time"
+      <select
         id="time"
         name="time"
         required
         onChange={handleChange}
         value={formState.time}
-      />
+      >
+        <option value="">Select a time</option>
+        <option value="18:00">18:00 - 21:00</option>
+        <option value="21:00">21:00 - 24:00</option>
+      </select>
       <br />
       <label htmlFor="numberOfGuests">Number of Guests:</label>
       <br />
@@ -138,6 +140,8 @@ const Form = () => {
         required
         onChange={handleChange}
         value={formState.numberOfGuests}
+        min="1"
+        max="6"
       />
       <br />
       <input type="submit" value="Reserve" />

@@ -61,6 +61,26 @@ const Admin = () => {
     }
   };
 
+  const deleteBooking = async (id: string) => {
+    try {
+      const response = await fetch(`https://school-restaurant-api.azurewebsites.net/booking/delete/${id}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) {
+        throw new Error('Error deleting booking');
+      }
+      fetchBookings();
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const confirmDelete = (id: string) => {
+    if (window.confirm('Do you want to delete this booking?')) {
+      deleteBooking(id);
+    }
+  };
+
   return (
     <div className="Admin">
       <button onClick={fetchBookings}>
@@ -81,6 +101,7 @@ const Admin = () => {
                 <li key={booking._id}>
                   Booking ID: {booking._id}, Date: {booking.date}, Time:{" "}
                   {booking.time}, Number of Guests: {booking.numberOfGuests}
+                  <button style={{ fontSize: '10px', padding: '5px' }} onClick={() => confirmDelete(booking._id)}>Delete</button>
                 </li>
               ))}
             </div>
