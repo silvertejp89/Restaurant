@@ -1,0 +1,145 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main-container {
+  overflow: hidden;
+  top: 25px;
+  z-index: 0;
+}
+
+.main-container,
+.main-container * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+.main-container {
+  position: relative;
+  width: 320px;
+  height: 568px;
+  margin: 0 auto;
+  background: #404040;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mobile-contact {
+  position: absolute;
+  width: 320px;
+  height: 568px;
+  top: -1px;
+  left: -1px;
+  font-size: 0px;
+  background: #ffffff;
+  overflow: hidden;
+}
+.about-us {
+  display: block;
+  position: relative;
+  height: 29px;
+  margin: 21px 0 0 89px;
+  color: #fff7f7;
+  font-family: Kanit, var(--default-font-family);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 29px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 2;
+}
+.ekerowoken-fresh-food {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  width: 263px;
+  height: 130px;
+  margin: 39px 0 0 39px;
+  color: #fff7f7;
+  font-family: Kanit, var(--default-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.93px;
+  text-align: left;
+  z-index: 8;
+}
+.emy-xobyibymx-unsplash {
+  position: relative;
+  width: 320px;
+  height: 136px;
+  margin: 0 0 0 0;
+  background: url(../../assets/Images/gareth-harrison-d2fCUh0PIKo-unsplash.jpg)
+    no-repeat center;
+  background-size: cover;
+  z-index: 3;
+  border: 1px solid rgba(255, 255, 255, 0.483);
+}
+.rectangle {
+  position: absolute;
+  width: 320px;
+  height: 568px;
+  top: 0;
+  left: 0;
+  background: #1c1414;
+  z-index: 1;
+}
+.span-torsgatagan-stockholm {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  width: 281px;
+  height: 136px;
+  top: 383px;
+  left: 39px;
+  color: #fff7f7;
+  font-family: Kanit, var(--default-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.93px;
+  text-align: left;
+  z-index: 4;
+}
+.group {
+  position: absolute;
+  width: 167px;
+  height: 43px;
+  top: 486px;
+  left: 39px;
+  font-size: 0px;
+  z-index: 5;
+  border-radius: 11px;
+  cursor: pointer;
+}
+.span-directions {
+  display: block;
+  position: relative;
+  height: 24px;
+  margin: 10px 0 0 32px;
+  color: #000000;
+  font-family: Inria Sans, var(--default-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23.98px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 7;
+}
+.rectangle-1 {
+  position: absolute;
+  width: 167px;
+  height: 43px;
+  top: 0;
+  left: 0;
+  background: #ee5c5c;
+  z-index: 6;
+  border-radius: 11px;
+}

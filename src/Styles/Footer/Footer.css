@@ -12,7 +12,7 @@ body {
 .footerFooter {
   background: linear-gradient(to right, #f39292, #c78f8f);
   color: #23114a;
-  padding: 40px 20px;
+
   text-align: center;
   display: flex;
   height: 160px;
@@ -26,7 +26,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 20px;
+  margin: 0 0px;
   width: 100%;
   text-align: center;
 }
@@ -38,7 +38,7 @@ body {
 }
 
 .footerFooter p {
-  margin: 10px 0;
+  margin: 7px 10px;
 }
 
 .footerFooter a {
@@ -55,23 +55,23 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .footerFooter {
+  body .footerFooter {
     display: flex;
     background: linear-gradient(to right, #f39292, #c78f8f);
     color: #23114a;
-    padding: 10px 10px;
+
     text-align: center;
 
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
   }
   .footerDiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 20px;
     width: 100%;
     text-align: center;
   }
@@ -85,7 +85,6 @@ body {
   .footerFooter a {
     color: #361755;
     text-decoration: none;
-
     margin-right: 20px;
     font-weight: bold;
     font-size: 1.3em;
