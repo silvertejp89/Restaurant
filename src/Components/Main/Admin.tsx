@@ -86,7 +86,7 @@ const Admin = () => {
     setEditingBooking(booking);
   };
 
-  const handleEditChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleEditChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     if (editingBooking) {
       setEditingBooking({
         ...editingBooking,
@@ -167,22 +167,26 @@ const Admin = () => {
           </label>
           <label>
             Time:
-            <input
-              type="text"
+            <select
               name="time"
               value={editingBooking.time}
               onChange={handleEditChange}
               style={{ margin: '10px' }}
-            />
+            >
+              <option value="18:00">18:00</option>
+              <option value="21:00">21:00</option>
+            </select>
           </label>
           <label>
             NoG:
             <input
-              type="text"
+              type="number"
               name="numberOfGuests"
               value={editingBooking.numberOfGuests}
               onChange={handleEditChange}
               style={{ margin: '10px' }}
+              min="1"
+              max="6"
             />
           </label>
           <button style={{ fontSize: '12px', padding: '5px', margin: '10px' }} type="submit">Save Changes</button>
