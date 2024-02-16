@@ -21,7 +21,7 @@ const Form = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
+  
     const bookingData = {
       restaurantId: "65ca2900434ff1a78715c30c",
       date: formState.date,
@@ -34,7 +34,7 @@ const Form = () => {
         phone: formState.phone,
       },
     };
-
+  
     fetch("https://school-restaurant-api.azurewebsites.net/booking/create", {
       method: "POST",
       headers: {
@@ -45,6 +45,7 @@ const Form = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Booking created:", data);
+        alert(`You have booked a table for ${formState.numberOfGuests} guests, at ${formState.time}, ${formState.date}. Thank you for dining with us!`);
         setFormState({
           name: "",
           lastname: "",
@@ -59,6 +60,7 @@ const Form = () => {
         console.error("Error:", error);
       });
   };
+  
 
   return (
     <form id="bookingForm" onSubmit={handleSubmit}>
