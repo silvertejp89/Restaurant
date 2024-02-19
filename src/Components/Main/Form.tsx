@@ -1,5 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../Styles/Main/Form.css";
+
+//--------------------------------------------
+
+//hämta önskat datum och tid från formuläret och sätt i filtrering nedan.
+//Räkna ut antal desiredTables baserat på antal gäster.
+
+//Gör en fetch på alla bokningar
+//filtrera bokningarna på datum och tid som angetts i formulär
+//Räkna samman antal bookedTables i bokningarna
+//availableTables = Maxkapaciteten för bord(hårdkodad) minus bookedTables.
+
+//Jämför desiredTables med availableTables.
+
+//--------------------------------------------
 
 const Form = () => {
   const [formState, setFormState] = useState({
@@ -12,7 +26,41 @@ const Form = () => {
     numberOfGuests: "",
   });
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  useEffect(() => {
+    fetchAllBookings();
+  }, []);
+
+  const fetchAllBookings = async () => {
+    try {
+      const response = await fetch(
+        "https://school-restaurant-api.azurewebsites.net/booking/restaurant/65ca2900434ff1a78715c30c"
+      );
+      const data = await response.json();
+
+      //Filtrera efter datum och tid.
+      const filteredBookings = data.filter(
+        (booking: { date: string; time: string }) =>
+          booking.date === formState.date && booking.time === formState.time
+      );
+
+      //räkna antalet bord
+      const totalBookedTables = filteredBookings.reduce(
+        (totalGuests: number, booking: { numberOfGuests: string }) =>
+          totalGuests + parseInt(booking.numberOfGuests),
+        0
+      );
+
+      setBookedTables(totalBookedTables);
+    } catch (error) {
+      console.error("Ajsing bajsing", error);
+    }
+  };
+
+  //-----------------------------------------------------------------------
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     setFormState({
       ...formState,
       [event.target.name]: event.target.value,
@@ -21,7 +69,8 @@ const Form = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-  
+    //Räkna ut anralet önskade bord baserat på antalet gäster
+
     const bookingData = {
       restaurantId: "65ca2900434ff1a78715c30c",
       date: formState.date,
@@ -34,7 +83,7 @@ const Form = () => {
         phone: formState.phone,
       },
     };
-  
+
     fetch("https://school-restaurant-api.azurewebsites.net/booking/create", {
       method: "POST",
       headers: {
@@ -45,7 +94,9 @@ const Form = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Booking created:", data);
-        alert(`You have booked a table for ${formState.numberOfGuests} guests, at ${formState.time}, ${formState.date}. Thank you for dining with us!`);
+        alert(
+          `You have booked a table for ${formState.numberOfGuests} guests, at ${formState.time}, ${formState.date}. Thank you for dining with us!`
+        );
         setFormState({
           name: "",
           lastname: "",
@@ -60,7 +111,6 @@ const Form = () => {
         console.error("Error:", error);
       });
   };
-  
 
   return (
     <form id="bookingForm" onSubmit={handleSubmit}>
