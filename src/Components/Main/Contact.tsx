@@ -6,7 +6,7 @@ export function About() {
       <div className="mobile-contact">
         <span className="about-us">About us</span>
         <span className="ekerowoken-fresh-food">
-          Ekerowoken Fresh Food bygger på mat. <br />
+          LAK Fresh Food bygger på mat. <br />
           Vi erbjuder ett alternativ till traditionell fastfood som går lika
           snabbt men som smakar bättre och framförallt är mer hälsosamt.
         </span>
