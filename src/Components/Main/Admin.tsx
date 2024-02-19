@@ -64,11 +64,14 @@ const Admin = () => {
 
   const deleteBooking = async (id: string) => {
     try {
-      const response = await fetch(`https://school-restaurant-api.azurewebsites.net/booking/delete/${id}`, {
-        method: 'DELETE',
-      });
+      const response = await fetch(
+        `https://school-restaurant-api.azurewebsites.net/booking/delete/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (!response.ok) {
-        throw new Error('Error deleting booking');
+        throw new Error("Error deleting booking");
       }
       fetchBookings();
     } catch (error) {
@@ -77,7 +80,7 @@ const Admin = () => {
   };
 
   const confirmDelete = (id: string) => {
-    if (window.confirm('Do you want to delete this booking?')) {
+    if (window.confirm("Do you want to delete this booking?")) {
       deleteBooking(id);
     }
   };
@@ -86,7 +89,9 @@ const Admin = () => {
     setEditingBooking(booking);
   };
 
-  const handleEditChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleEditChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     if (editingBooking) {
       setEditingBooking({
         ...editingBooking,
@@ -99,22 +104,25 @@ const Admin = () => {
     event.preventDefault();
     if (editingBooking) {
       try {
-        const response = await fetch(`https://school-restaurant-api.azurewebsites.net/booking/update/${editingBooking._id}`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            id: editingBooking._id,
-            restaurantId: "65ca2900434ff1a78715c30c", 
-            date: editingBooking.date,
-            time: editingBooking.time,
-            numberOfGuests: editingBooking.numberOfGuests,
-            customerId: editingBooking.customerId,
-          }),
-        });
+        const response = await fetch(
+          `https://school-restaurant-api.azurewebsites.net/booking/update/${editingBooking._id}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              id: editingBooking._id,
+              restaurantId: "65ca2900434ff1a78715c30c",
+              date: editingBooking.date,
+              time: editingBooking.time,
+              numberOfGuests: editingBooking.numberOfGuests,
+              customerId: editingBooking.customerId,
+            }),
+          }
+        );
         if (!response.ok) {
-          throw new Error('Error updating booking');
+          throw new Error("Error updating booking");
         }
         fetchBookings();
         setEditingBooking(null);
@@ -123,7 +131,6 @@ const Admin = () => {
       }
     }
   };
-  
 
   return (
     <div className="Admin">
@@ -139,14 +146,26 @@ const Admin = () => {
                 {customerBooking.customerData.name}{" "}
                 {customerBooking.customerData.lastname}, Email:{" "}
                 {customerBooking.customerData.email}, Phone:{" "}
-                {customerBooking.customerData.phone}
+                {customerBooking.customerData.phone},
               </li>
               {customerBooking.bookings.map((booking) => (
                 <li key={booking._id}>
                   Booking ID: {booking._id}, Date: {booking.date}, Time:{" "}
-                  {booking.time}, Number of Guests: {booking.numberOfGuests}
-                  <button style={{ fontSize: '12px', padding: '5px' }} onClick={() => startEditing(booking)}>Edit</button>
-                  <button style={{ fontSize: '12px', padding: '5px' }} onClick={() => confirmDelete(booking._id)}>Delete</button>
+                  {booking.time}, Number of Guests: {booking.numberOfGuests},
+                  Number of Tables:{" "}
+                  {Math.ceil(parseInt(booking.numberOfGuests) / 6)}
+                  <button
+                    style={{ fontSize: "12px", padding: "5px" }}
+                    onClick={() => startEditing(booking)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    style={{ fontSize: "12px", padding: "5px" }}
+                    onClick={() => confirmDelete(booking._id)}
+                  >
+                    Delete
+                  </button>
                 </li>
               ))}
             </div>
@@ -154,7 +173,14 @@ const Admin = () => {
         </ul>
       )}
       {editingBooking && (
-        <form onSubmit={handleEditSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <form
+          onSubmit={handleEditSubmit}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <label>
             Date:
             <input
@@ -162,7 +188,7 @@ const Admin = () => {
               name="date"
               value={editingBooking.date}
               onChange={handleEditChange}
-              style={{ margin: '10px' }}
+              style={{ margin: "10px" }}
             />
           </label>
           <label>
@@ -171,7 +197,7 @@ const Admin = () => {
               name="time"
               value={editingBooking.time}
               onChange={handleEditChange}
-              style={{ margin: '10px' }}
+              style={{ margin: "10px" }}
             >
               <option value="18:00">18:00</option>
               <option value="21:00">21:00</option>
@@ -184,12 +210,17 @@ const Admin = () => {
               name="numberOfGuests"
               value={editingBooking.numberOfGuests}
               onChange={handleEditChange}
-              style={{ margin: '10px' }}
+              style={{ margin: "10px" }}
               min="1"
-              max="6"
+              max="90"
             />
           </label>
-          <button style={{ fontSize: '12px', padding: '5px', margin: '10px' }} type="submit">Save Changes</button>
+          <button
+            style={{ fontSize: "12px", padding: "5px", margin: "10px" }}
+            type="submit"
+          >
+            Save Changes
+          </button>
         </form>
       )}
     </div>
