@@ -2,8 +2,6 @@ import "../../Styles/Main/Contact.css";
 
 export function About() {
   return (
-
-    
     <div className="main-container">
       <div className="mobile-contact">
         <span className="about-us">About us</span>
@@ -12,17 +10,17 @@ export function About() {
           Vi erbjuder ett alternativ till traditionell fastfood som går lika
           snabbt men som smakar bättre och framförallt är mer hälsosamt.
         </span>
-       
+
         <div className="emy-xobyibymx-unsplash" />
 
-        <div className="rectangle"/>
+        <div className="rectangle" />
         <span className="span-torsgatagan-stockholm">
           Götgatan 68
           <br />
           118 30 Stockholm <br />
           073 - 788 03 34
           <br />
-          lak.lakrestaurants@info.com
+          LAK.lakrestaurants@info.com
           <br />
           <br />
         </span>
@@ -37,7 +35,6 @@ export function About() {
           <div className="rectangle-1" />
         </div>
       </div>
-      
     </div>
   );
 }

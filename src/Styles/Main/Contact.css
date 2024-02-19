@@ -143,3 +143,132 @@ button {
   z-index: 6;
   border-radius: 11px;
 }
+
+.main-container,
+.mobile-contact,
+.emy-xobyibymx-unsplash,
+.span-torsgatagan-stockholm,
+.rectangle,
+.group {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 600px) {
+  .main-container {
+    width: 768px;
+
+    display: flex;
+  }
+
+  .emy-xobyibymx-unsplash,
+  .span-torsgatagan-stockholm,
+  .rectangle,
+  .group {
+    width: 100%;
+  }
+  .about-us {
+    display: block;
+    position: relative;
+    height: 29px;
+    margin: 21px 0 0 89px;
+    color: #fff7f7;
+    font-family: Kanit, var(--default-font-family);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 29px;
+    right: 4%;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  .ekerowoken-fresh-food {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    left: 30%;
+    width: 263px;
+    height: 130px;
+    margin: 39px 0 0 39px;
+    color: #fff7f7;
+    font-family: Kanit, var(--default-font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.93px;
+    text-align: left;
+    z-index: 8;
+  }
+  .emy-xobyibymx-unsplash {
+    position: relative;
+    width: 320px;
+    height: 136px;
+    margin: 0 0 0 0;
+    background: url(../../assets/Images/gareth-harrison-d2fCUh0PIKo-unsplash.jpg)
+      no-repeat center;
+    background-size: cover;
+    z-index: 3;
+    left: 30%;
+    border: 1px solid rgba(255, 255, 255, 0.483);
+  }
+  .rectangle {
+    width: 100%;
+    height: 568px;
+    top: 0;
+    left: 0;
+    background: #1c1414;
+    z-index: 1;
+  }
+  .span-torsgatagan-stockholm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 281px;
+    height: 136px;
+    top: 383px;
+    left: 35%;
+    color: #fff7f7;
+    font-family: Kanit, var(--default-font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.93px;
+    text-align: left;
+    z-index: 4;
+  }
+  .group {
+    width: 167px;
+    height: 43px;
+    top: 486px;
+    left: 40%;
+    font-size: 0px;
+    z-index: 5;
+    border-radius: 11px;
+    cursor: pointer;
+  }
+  .span-directions {
+    display: block;
+    position: relative;
+    height: 24px;
+    margin: 10px 0 0 32px;
+    color: #000000;
+    font-family: Inria Sans, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23.98px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 7;
+  }
+  .rectangle-1 {
+    position: absolute;
+    width: 167px;
+    height: 43px;
+    top: 0;
+    left: 0;
+    background: #ee5c5c;
+    z-index: 6;
+    border-radius: 11px;
+  }
+}
