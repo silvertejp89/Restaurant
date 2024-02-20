@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../Styles/Main/Admin.css";
 
 type Booking = {
@@ -26,6 +26,11 @@ const Admin = () => {
   const [bookings, setBookings] = useState<CustomerBooking[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const [editingBooking, setEditingBooking] = useState<Booking | null>(null);
+
+  useEffect(() => {
+    // Anropa fetchBookings när komponenten mountar
+    fetchBookings();
+  }, []); // Tomt beroendearray för att köra useEffect en gång när komponenten mountar
 
   const fetchBookings = async () => {
     if (isVisible) {
@@ -104,6 +109,7 @@ const Admin = () => {
     event.preventDefault();
     if (editingBooking) {
       try {
+        //här någonstans ska det kollas bokningar.
         const response = await fetch(
           `https://school-restaurant-api.azurewebsites.net/booking/update/${editingBooking._id}`,
           {
@@ -134,44 +140,46 @@ const Admin = () => {
 
   return (
     <div className="Admin">
-      <button onClick={fetchBookings}>
+      {/* <button onClick={fetchBookings}>
         {isVisible ? "Close Bookings" : "Show Bookings"}
-      </button>
-      {isVisible && (
-        <ul>
-          {bookings.map((customerBooking) => (
-            <div key={customerBooking.customerId}>
-              <li className="customer-id">
-                Customer ID: {customerBooking.customerId}, Name:{" "}
-                {customerBooking.customerData.name}{" "}
-                {customerBooking.customerData.lastname}, Email:{" "}
-                {customerBooking.customerData.email}, Phone:{" "}
-                {customerBooking.customerData.phone},
+      </button> */}
+      {/* {isVisible && ( */}
+      <h2>Admin - Bookings:</h2>
+      <ul>
+        {bookings.map((customerBooking) => (
+          <div key={customerBooking.customerId}>
+            <li className="customer-id">
+              Name: {customerBooking.customerData.name}{" "}
+              {customerBooking.customerData.lastname}, Email:{" "}
+              {customerBooking.customerData.email}, Phone:{" "}
+              {customerBooking.customerData.phone},
+            </li>
+            {customerBooking.bookings.map((booking) => (
+              <li key={booking._id}>
+                Date: {booking.date}
+                <br /> Time: {booking.time}
+                <br /> Number of Guests: {booking.numberOfGuests}
+                <br /> Number of Tables:
+                {Math.ceil(parseInt(booking.numberOfGuests) / 6)}
+                <br />
+                <button
+                  style={{ fontSize: "12px", padding: "5px" }}
+                  onClick={() => startEditing(booking)}
+                >
+                  Edit
+                </button>
+                <button
+                  style={{ fontSize: "12px", padding: "5px" }}
+                  onClick={() => confirmDelete(booking._id)}
+                >
+                  Delete
+                </button>
               </li>
-              {customerBooking.bookings.map((booking) => (
-                <li key={booking._id}>
-                  Booking ID: {booking._id}, Date: {booking.date}, Time:{" "}
-                  {booking.time}, Number of Guests: {booking.numberOfGuests},
-                  Number of Tables:{" "}
-                  {Math.ceil(parseInt(booking.numberOfGuests) / 6)}
-                  <button
-                    style={{ fontSize: "12px", padding: "5px" }}
-                    onClick={() => startEditing(booking)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    style={{ fontSize: "12px", padding: "5px" }}
-                    onClick={() => confirmDelete(booking._id)}
-                  >
-                    Delete
-                  </button>
-                </li>
-              ))}
-            </div>
-          ))}
-        </ul>
-      )}
+            ))}
+          </div>
+        ))}
+      </ul>
+      {/* )} */}
       {editingBooking && (
         <form
           onSubmit={handleEditSubmit}

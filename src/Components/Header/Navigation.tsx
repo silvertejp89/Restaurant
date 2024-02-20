@@ -18,11 +18,11 @@ const Navigation: React.FC = () => {
             <Link className="link1" to="/">
               Home
             </Link>
-            <Link className="link1" to="/booking">
-              Booking
-            </Link>
             <Link className="link3" to="/Contact">
               Contact
+            </Link>
+            <Link className="link1" to="/booking">
+              Booking
             </Link>
             <Link className="link3" to="/Admin">
               Admin
@@ -31,15 +31,6 @@ const Navigation: React.FC = () => {
         </nav>
       </section>
     </div>
-
-    /*  <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/booking">Booking</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/admin">Admin</Link></li>
-      </ul>
-    </nav> */
   );
 };
 

@@ -16,6 +16,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     width: 80%;
     height: 90%;
+    gap: 1rem;
   }
 
   #bookingForm label {

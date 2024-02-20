@@ -6,9 +6,11 @@ export function About() {
       <div className="mobile-contact">
         <span className="about-us">About us</span>
         <span className="ekerowoken-fresh-food">
-          LAK Fresh Food bygger på mat. <br />
-          Vi erbjuder ett alternativ till traditionell fastfood som går lika
-          snabbt men som smakar bättre och framförallt är mer hälsosamt.
+          Welcome to LAK, where mediocrity meets your plate. Our half-hearted
+          attempt at culinary delights promises an underwhelming experience.
+          We're just here to meet the bare minimum of your culinary
+          expectations.
+          <br />
         </span>
 
         <div className="emy-xobyibymx-unsplash" />

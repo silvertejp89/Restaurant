@@ -133,52 +133,8 @@ const Form = () => {
 
   return (
     <form id="bookingForm" onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
-      <br />
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        onChange={handleChange}
-        value={formState.name}
-      />
-      <br />
-      <label htmlFor="lastname">Last Name:</label>
-      <br />
-      <input
-        type="text"
-        id="lastname"
-        name="lastname"
-        required
-        onChange={handleChange}
-        value={formState.lastname}
-      />
-      <br />
-      <label htmlFor="email">Email:</label>
-      <br />
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        onChange={handleChange}
-        value={formState.email}
-      />
-      <br />
-      <label htmlFor="phone">Phone:</label>
-      <br />
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        required
-        onChange={handleChange}
-        value={formState.phone}
-      />
-      <br />
+      <h2>What day would you like to visit?</h2>
       <label htmlFor="date">Date:</label>
-      <br />
       <input
         type="date"
         id="date"
@@ -187,9 +143,7 @@ const Form = () => {
         onChange={handleChange}
         value={formState.date}
       />
-      <br />
       <label htmlFor="time">Time:</label>
-      <br />
       <select
         id="time"
         name="time"
@@ -201,9 +155,7 @@ const Form = () => {
         <option value="18:00">18:00 - 21:00</option>
         <option value="21:00">21:00 - 24:00</option>
       </select>
-      <br />
       <label htmlFor="numberOfGuests">Number of Guests:</label>
-      <br />
       <input
         type="number"
         id="numberOfGuests"
@@ -214,7 +166,45 @@ const Form = () => {
         min="1"
         max="90"
       />
-      <br />
+      <h2>Please fill in contact information:</h2>
+      <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        onChange={handleChange}
+        value={formState.name}
+      />
+      <label htmlFor="lastname">Last Name:</label>
+      <input
+        type="text"
+        id="lastname"
+        name="lastname"
+        required
+        onChange={handleChange}
+        value={formState.lastname}
+      />
+      <label htmlFor="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        onChange={handleChange}
+        value={formState.email}
+      />
+      <label htmlFor="phone">Phone:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        onChange={handleChange}
+        value={formState.phone}
+      />
+      <label htmlFor="gdpr">I consent to storing of my data</label>
+      <input type="checkbox" id="gdpr" required />
       <input type="submit" value="Reserve" />
     </form>
   );
