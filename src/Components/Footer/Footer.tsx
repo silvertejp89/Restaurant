@@ -22,7 +22,7 @@ export function Footer() {
         <p className="pMail">Email: {contactInfo.email}</p>
       </div> */}
       <div className="footerDiv">
-        <h3 id="Follow">Follow Us</h3>
+        
         {socialLinks.map((link, index) => (
           <a
             key={index}
