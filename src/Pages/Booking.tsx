@@ -1,8 +1,8 @@
 import React from "react";
-import Form from "../Components/Main/Form";
+import Formadmin from "../Components/Main/Formadmin";
 
 const Booking: React.FC = () => {
-  return <Form />;
+  return <Formadmin />;
 };
 
 export default Booking;

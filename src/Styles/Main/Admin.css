@@ -19,14 +19,58 @@
   }
 
   .Admin button {
-    background-color: #ee7474;
+    position: relative;
+    left: 0%;
+    background-color: #f56f6f;
     border: none;
-    color: rgb(37, 13, 48);
+    color: rgb(40, 20, 49);
+    padding: 12px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: clamp(14px, 5vw, 45px);
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .Admin button a#adminButton {
+    left: 25%;
+    background-color: #ff9393;
+    border: none;
+    color: rgb(15, 7, 20);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: clamp(2px, 2vw, 45px);
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  #adminButtonEdit {
+    position: relative;
+    left: 1%;
+    background-color: #ff9393;
+    border: none;
+    color: rgb(15, 7, 20);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: clamp(2px, 2vw, 45px);
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  #adminButtonDelete {
+    position: relative;
+    left: 1%;
+    background-color: #ff9393;
+    border: none;
+    color: rgb(15, 7, 20);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: clamp(2px, 2vw, 45px);
     margin: 4px 2px;
     cursor: pointer;
   }
@@ -75,14 +119,58 @@
   }
 
   .Admin button {
-    background-color: #ee7474;
+    position: relative;
+    left: 20%;
+    background-color: #f56f6f;
     border: none;
-    color: rgb(37, 13, 48);
-    padding: 15px 32px;
+    color: rgb(40, 20, 49);
+    padding: 10px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: clamp(14px, 5vw, 45px);
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .Admin button a#adminButton {
+    left: 25%;
+    background-color: #ff9393;
+    border: none;
+    color: rgb(15, 7, 20);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: clamp(2px, 2vw, 45px);
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  #adminButtonEdit {
+    position: relative;
+    left: 1%;
+    background-color: #ff9393;
+    border: none;
+    color: rgb(15, 7, 20);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: clamp(2px, 2vw, 45px);
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  #adminButtonDelete {
+    position: relative;
+    left: 1%;
+    background-color: #ff9393;
+    border: none;
+    color: rgb(15, 7, 20);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: clamp(2px, 2vw, 45px);
     margin: 4px 2px;
     cursor: pointer;
   }

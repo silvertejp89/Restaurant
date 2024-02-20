@@ -4,12 +4,14 @@ import Home from '../Pages/Home';
 import Booking from '../Pages/Booking';
 import Contact from '../Pages/Contact';
 import Admin from '../Pages/Admin';
+import Formadmin from '../Components/Main/Formadmin';
 
 const AppRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/booking" element={<Booking />} />
+      <Route path="/bookingadmin" element={<Formadmin />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/admin" element={<Admin />} />
     </Routes>
