@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../../Styles/Main/Form.css";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [formState, setFormState] = useState({
@@ -14,6 +15,7 @@ const Form = () => {
 
   const [maxCapacity] = useState(15); // Hårdkodad maxkapacitet för bord
   const [bookedTables, setBookedTables] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Gör en fetch på alla bokningar när komponenten monteras och uppdatera bookedTables
@@ -116,6 +118,8 @@ const Form = () => {
           time: "",
           numberOfGuests: "",
         });
+
+        navigate("/");
       } catch (error) {
         console.error("Error:", error);
       }
