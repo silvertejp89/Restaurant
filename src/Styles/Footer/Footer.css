@@ -12,7 +12,6 @@ body {
 .footerFooter {
   background: linear-gradient(to right, #f39292, #c78f8f);
   color: #23114a;
-
   text-align: center;
   display: flex;
   height: 160px;
