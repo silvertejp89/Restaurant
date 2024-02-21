@@ -132,7 +132,9 @@ const Form = () => {
   };
 
   return (
+    
     <form id="bookingForm" onSubmit={handleSubmit}>
+      
       <h2>What day would you like to visit?</h2>
       <label htmlFor="date">Date:</label>
       <input

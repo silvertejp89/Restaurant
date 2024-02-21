@@ -183,7 +183,7 @@ const Admin = () => {
           </div>
           
         ))}
-        <button> <Link to="/bookingadmin"  id="adminButton" style={{ fontSize: "25px", padding: "5px" }}>Lägg till bokning</Link></button>
+        <button> <Link to="/Bookingadmin"  id="adminButton" style={{ fontSize: "25px", padding: "5px" }}>Lägg till bokning</Link></button>
       </ul>
       {/* )} */}
       {editingBooking && (
