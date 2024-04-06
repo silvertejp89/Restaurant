@@ -207,7 +207,7 @@ const Form = () => {
       />
       <label htmlFor="gdpr">I consent to storing of my data</label>
       <input type="checkbox" id="gdpr" required />
-      <input type="submit" value="Reserve" />
+      <input type="submit" value="Make booking" />
     </form>
   );
 };
