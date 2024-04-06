@@ -133,7 +133,6 @@ const Form = () => {
 
   return (
     <form id="bookingForm" onSubmit={handleSubmit}>
-      
       <h2>What day would you like to visit?</h2>
       <label htmlFor="date">Date:</label>
       <input
@@ -206,7 +205,7 @@ const Form = () => {
       />
       <label htmlFor="gdpr">I consent to storing of my data</label>
       <input type="checkbox" id="gdpr" required />
-      <input type="submit" value="Reserve" />
+      <input type="submit" value="Make Booking" />
     </form>
   );
 };

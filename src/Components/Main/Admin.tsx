@@ -164,14 +164,14 @@ const Admin = () => {
                 {Math.ceil(parseInt(booking.numberOfGuests) / 6)}
                 <br />
                 <button
-                id="adminButtonEdit"
+                  id="adminButtonEdit"
                   style={{ fontSize: "12px", padding: "5px" }}
                   onClick={() => startEditing(booking)}
                 >
                   Edit
                 </button>
                 <button
-                id="adminButtonDelete"
+                  id="adminButtonDelete"
                   style={{ fontSize: "12px", padding: "5px" }}
                   onClick={() => confirmDelete(booking._id)}
                 >
@@ -179,15 +179,21 @@ const Admin = () => {
                 </button>
               </li>
             ))}
-           
           </div>
-          
         ))}
-        <button> <Link to="/Bookingadmin"  id="adminButton" style={{ fontSize: "25px", padding: "5px" }}>Lägg till bokning</Link></button>
+        <button>
+          {" "}
+          <Link
+            to="/Bookingadmin"
+            id="adminButton"
+            style={{ fontSize: "25px", padding: "5px" }}
+          >
+            New Booking
+          </Link>
+        </button>
       </ul>
       {/* )} */}
       {editingBooking && (
-        
         <form
           onSubmit={handleEditSubmit}
           style={{
